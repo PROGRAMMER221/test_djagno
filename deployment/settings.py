@@ -25,7 +25,7 @@ SECRET_KEY = '(u#@_*!72r*0$)s8z-7u3la45(3qdpid4&)$s-$464!7fmt^r1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','']
+ALLOWED_HOSTS = ['127.0.0.1','enterprise-deployment.herokuapp.com']
 
 
 # Application definition
@@ -76,8 +76,15 @@ WSGI_APPLICATION = 'deployment.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'deploy',
+        'HOST': 'DESKTOP-5GH3T49',
+        'USER': 'sa',
+        'PASSWORD': 'tstsql#1234',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        }
+
     }
 }
 

@@ -18,5 +18,7 @@ from django.conf.urls import url
 from deploy import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='home')
+    url(r'^$', views.index, name='home'),
+    url(r'^student-form/$', views.StudentView, name='home'),
+    url(r'^student-display/$', views.StudentDisplayView, name='home'),
 ]
